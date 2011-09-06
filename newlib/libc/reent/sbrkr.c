@@ -28,7 +28,7 @@ extern int errno;
 /*
 FUNCTION
 	<<_sbrk_r>>---Reentrant version of sbrk
-	
+
 INDEX
 	_sbrk_r
 

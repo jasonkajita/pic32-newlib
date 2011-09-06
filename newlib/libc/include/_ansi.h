@@ -80,7 +80,7 @@
 #ifndef _PARAMS
 #define _PARAMS(paramlist)		paramlist
 #endif
-#else	
+#else
 #define	_PTR		char *
 #define	_AND		;
 #define	_NOARGS
@@ -125,7 +125,7 @@
 /* We're using GCC, but without the new C99-compatible behaviour.  */
 #define _ELIDABLE_INLINE extern __inline__ _ATTRIBUTE ((__always_inline__))
 #else
-/* We're using GCC in C99 mode, or an unknown compiler which 
+/* We're using GCC in C99 mode, or an unknown compiler which
   we just have to hope obeys the C99 semantics of inline.  */
 #define _ELIDABLE_INLINE __inline__
 #endif
