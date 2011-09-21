@@ -26,13 +26,13 @@
 
 _BEGIN_STD_C
 
-typedef struct 
+typedef struct
 {
   int quot; /* quotient */
   int rem; /* remainder */
 } div_t;
 
-typedef struct 
+typedef struct
 {
   long quot; /* quotient */
   long rem; /* remainder */
@@ -59,8 +59,10 @@ int	_EXFUN(__locale_mb_cur_max,(_VOID));
 
 #define MB_CUR_MAX __locale_mb_cur_max()
 
-_VOID	_EXFUN(abort,(_VOID) _ATTRIBUTE ((noreturn)));
+_VOID	_EXFUN(abort,(_VOID)) _ATTRIBUTE ((noreturn));
+#if 0
 int	_EXFUN(abs,(int));
+#endif
 int	_EXFUN(atexit,(_VOID (*__func)(_VOID)));
 double	_EXFUN(atof,(const char *__nptr));
 #ifndef __STRICT_ANSI__
@@ -128,7 +130,7 @@ double	_EXFUN(_strtod_r,(struct _reent *,const char *__n, char **__end_PTR));
 float	_EXFUN(strtof,(const char *__n, char **__end_PTR));
 #ifndef __STRICT_ANSI__
 /* the following strtodf interface is deprecated...use strtof instead */
-# ifndef strtodf 
+# ifndef strtodf
 #  define strtodf strtof
 # endif
 #endif
@@ -220,6 +222,78 @@ _VOID	_EXFUN(__eprintf,(const char *, const char *, unsigned int, const char *))
 extern long double strtold (const char *, char **);
 extern long double wcstold (const wchar_t *, wchar_t **);
 #endif /* _LDBL_EQ_DBL */
+
+static char *
+utoa(unsigned val, char * buf, int base)
+{
+	unsigned	v;
+	char		c;
+
+	v = val;
+	do {
+		v /= base;
+		buf++;
+	} while(v != 0);
+	*buf-- = 0;
+	do {
+		c = val % base;
+		val /= base;
+		if(c >= 10)
+			c += 'A'-'0'-10;
+		c += '0';
+		*buf-- = c;
+	} while(val != 0);
+	return buf;
+}
+
+static char *
+itoa(int val, char * buf, int base)
+{
+	char *	cp = buf;
+
+	if(val < 0) {
+		*buf++ = '-';
+		val = -val;
+	}
+	utoa(val, buf, base);
+	return cp;
+}
+
+static char *
+ultoa(unsigned long val, char * buf, int base)
+{
+	unsigned	long	v;
+	char		c;
+
+	v = val;
+	do {
+		v /= base;
+		buf++;
+	} while(v != 0);
+	*buf-- = 0;
+	do {
+		c = val % base;
+		val /= base;
+		if(c >= 10)
+			c += 'A'-'0'-10;
+		c += '0';
+		*buf-- = c;
+	} while(val != 0);
+	return buf;
+}
+
+static char *
+ltoa(long val, char * buf, int base)
+{
+	char *	cp = buf;
+
+	if(val < 0) {
+		*buf++ = '-';
+		val = -val;
+	}
+	ultoa(val, buf, base);
+	return cp;
+}
 
 _END_STD_C
 
