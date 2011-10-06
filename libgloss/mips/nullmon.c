@@ -26,7 +26,7 @@
    Similarly, every service provided by this file muse be provided by all
    monitor speciifc interfaces.
    PLEASE DO NOT MAKE THIS FILE SPECIFIC TO ANY MONITOR
- */   
+ */
 
 /* This form is giving linker relocation errors */
 #if ! defined(BOARD_MEM_SIZE)
@@ -57,7 +57,7 @@ get_mem_info (mem)
   I would rather not to even pretend to support these functions but, they
   get pulled in by other libraries.
 */
- 
+
 int read(int file, char * ptr , int len) {   return 0 ; }
 int close (int file) { return -1 ; }
 int write(int file , char * ptr, int len) { return 0 ; }
