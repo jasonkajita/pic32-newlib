@@ -259,6 +259,7 @@ itoa(int val, char * buf, int base)
 	return cp;
 }
 
+#ifndef _SKIP_STDLIB_ULTOA
 static char *
 ultoa(unsigned long val, char * buf, int base)
 {
@@ -281,6 +282,11 @@ ultoa(unsigned long val, char * buf, int base)
 	} while(val != 0);
 	return buf;
 }
+#if defined (__PIC32MX__)
+#define _C32_ULTOA
+#endif
+#define _STDLIB_ULTOA
+#endif
 
 static char *
 ltoa(long val, char * buf, int base)
