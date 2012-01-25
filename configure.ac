@@ -980,7 +980,7 @@ case "${target}" in
   mips*-*-linux*)
     noconfigdirs="$noconfigdirs target-newlib target-libgloss"
     ;;
-  mips*-*-*)
+  mips*-*-* | pic32*-*-* | pic32mx*-*-* )
     noconfigdirs="$noconfigdirs gprof ${libgcj}"
     libgloss_dir=mips
     ;;
@@ -2380,7 +2380,7 @@ case "${target}" in
   spu-*-*)
     target_makefile_frag="config/mt-spu"
     ;;
-  mips*-sde-elf*)
+  mips*-sde-elf* | pic32*-*-* )
     target_makefile_frag="config/mt-sde"
     ;;
   mipsisa*-*-elfoabi*)

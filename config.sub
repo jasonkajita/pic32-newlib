@@ -382,7 +382,8 @@ case $basic_machine in
 	| nios-* | nios2-* \
 	| none-* | np1-* | ns16k-* | ns32k-* \
 	| orion-* \
-	| pdp10-* | pdp11-* | pj-* | pjl-* | pn-* | power-* \
+	| pdp10-* | pdp11-* \
+	| pic32-* | pic32mx-* | pj-* | pjl-* | pn-* | power-* \
 	| powerpc-* | powerpc64-* | powerpc64le-* | powerpcle-* | ppcbe-* \
 	| pyramid-* \
 	| romp-* | rs6000-* | rx-* \
