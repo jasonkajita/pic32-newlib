@@ -1,5 +1,6 @@
 #ifndef _CTYPE_H_
 #define _CTYPE_H_
+#define __CTYPE_NEWLIB
 
 #include "_ansi.h"
 
