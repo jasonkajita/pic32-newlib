@@ -60,8 +60,12 @@ int	_EXFUN(__locale_mb_cur_max,(_VOID));
 #define MB_CUR_MAX __locale_mb_cur_max()
 
 _VOID	_EXFUN(abort,(_VOID)) _ATTRIBUTE ((noreturn));
-#if 0
+#ifndef _SKIP_STDLIB_ABS
 int	_EXFUN(abs,(int));
+#if defined (__PIC32MX__)
+#define _C32_ABS
+#endif
+#define _STDLIB_ABS
 #endif
 int	_EXFUN(atexit,(_VOID (*__func)(_VOID)));
 double	_EXFUN(atof,(const char *__nptr));
