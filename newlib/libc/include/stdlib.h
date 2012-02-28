@@ -61,6 +61,7 @@ int	_EXFUN(__locale_mb_cur_max,(_VOID));
 
 _VOID	_EXFUN(abort,(_VOID)) _ATTRIBUTE ((noreturn));
 #ifndef _SKIP_STDLIB_ABS
+#undef abs
 int	_EXFUN(abs,(int));
 #if defined (__PIC32MX__)
 #define _C32_ABS
