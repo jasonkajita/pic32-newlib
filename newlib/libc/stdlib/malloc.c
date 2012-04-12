@@ -16,12 +16,12 @@ int _dummy_malloc = 1;
 
 /* DEFINES FOR PIC32      */
 /* See descriptions below */
-
+#if defined(__XC32) || defined(__C32__) || defined(__C32_VERSION__)
 #define HAVE_MMAP        0
 #define LACKS_UNISTD_H   1
 #define SMALL_MEMORY     1
 #define HAVE_GETPAGESIZE 1
-
+#endif
 /* END DEFINES FOR PIC32 */
 
 /*
