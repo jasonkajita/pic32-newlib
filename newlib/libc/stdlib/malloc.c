@@ -14,6 +14,16 @@ int _dummy_malloc = 1;
 
 #else
 
+/* DEFINES FOR PIC32      */
+/* See descriptions below */
+
+#define HAVE_MMAP        0
+#define LACKS_UNISTD_H   1
+#define SMALL_MEMORY     1
+#define HAVE_GETPAGESIZE 1
+
+/* END DEFINES FOR PIC32 */
+
 /*
 FUNCTION
 <<malloc>>, <<realloc>>, <<free>>---manage memory
