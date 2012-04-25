@@ -105,19 +105,19 @@ typedef _fpos64_t fpos64_t;
 #ifdef __BUFSIZ__
 #define	BUFSIZ		__BUFSIZ__
 #else
-#define	BUFSIZ		1024
+#define	BUFSIZ		32
 #endif
 
 #ifdef __FOPEN_MAX__
 #define FOPEN_MAX	__FOPEN_MAX__
 #else
-#define	FOPEN_MAX	20
+#define	FOPEN_MAX	5
 #endif
 
 #ifdef __FILENAME_MAX__
 #define FILENAME_MAX    __FILENAME_MAX__
 #else
-#define	FILENAME_MAX	1024
+#define	FILENAME_MAX	  512
 #endif
 
 #ifdef __L_tmpnam__

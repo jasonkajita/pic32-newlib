@@ -3505,7 +3505,7 @@ case "${target}" in
   microblaze*)
     noconfigdirs="$noconfigdirs gprof target-libssp ${libgcj}"
     ;;
-  mips*-sde-elf* )
+  mips*-sde-elf* | pic32* | pic32mx*)
     skipdirs="$skipdirs target-libiberty"
     noconfigdirs="$noconfigdirs ${libgcj}"
     if test x$with_newlib = xyes; then
