@@ -221,6 +221,12 @@
 #define __EXPORT
 #endif
 
+#if defined(__PIC32)
+#ifndef __IMPORT
+#define __IMPORT __attribute__((section(".libc.data")))
+#endif
+#endif
+
 #ifndef __IMPORT
 #define __IMPORT
 #endif
