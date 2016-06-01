@@ -129,7 +129,7 @@
 #if defined(__mips__) && !defined(__rtems__) && !defined(__PIC32)
 #define __ATTRIBUTE_IMPURE_PTR__ __attribute__((__section__(".sdata")))
 #elif defined(__PIC32)
-#define __ATTRIBUTE_IMPURE_PTR__ 
+#define __ATTRIBUTE_IMPURE_PTR__  __attribute__((section(".libc.data")))
 #endif
 
 #ifdef __xstormy16__
